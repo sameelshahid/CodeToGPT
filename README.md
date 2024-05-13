@@ -19,6 +19,6 @@ Before you start using **CodeToGPT**, make sure you have Python 3.6 or higher in
 To install **CodeToGPT**, follow these steps:
 
 ```bash
-git clone https://github.com/yourusername/codetogpt.git
+git clone https://github.com/sameelshahid/CodeToGPT.git
 cd codetogpt
 pip install -e .
