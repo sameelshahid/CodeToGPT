@@ -1,10 +1,19 @@
 from setuptools import setup, find_packages
 
+import os
+
+# Read the contents of your README file
+here = os.path.abspath(os.path.dirname(__file__))
+with open(os.path.join(here, 'README.md'), encoding='utf-8') as f:
+    long_description = f.read()
+
 setup(
-    name='codegpt',
-    version='0.1',
+    name='code-to-gpt',
+    version='0.4',
     packages=find_packages(),
     description='A simple tool to concatenate code files for ChatGPT prompts',
+    long_description=long_description,
+    long_description_content_type='text/markdown',
     author='Sameel Shahid',
     author_email='sameelshahid@hotmail.com',
     url='https://github.com/yourusername/codepackager',

@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+code_to_gpt.egg-info/PKG-INFO
+code_to_gpt.egg-info/SOURCES.txt
+code_to_gpt.egg-info/dependency_links.txt
+code_to_gpt.egg-info/entry_points.txt
+code_to_gpt.egg-info/top_level.txt
+codetogpt/__init__.py
+codetogpt/packager.py

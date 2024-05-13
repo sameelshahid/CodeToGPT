@@ -1,8 +1,0 @@
-setup.py
-codegpt.egg-info/PKG-INFO
-codegpt.egg-info/SOURCES.txt
-codegpt.egg-info/dependency_links.txt
-codegpt.egg-info/entry_points.txt
-codegpt.egg-info/top_level.txt
-codetogpt/__init__.py
-codetogpt/packager.py

@@ -1,3 +1,17 @@
+Metadata-Version: 2.1
+Name: code-to-gpt
+Version: 0.4
+Summary: A simple tool to concatenate code files for ChatGPT prompts
+Home-page: https://github.com/yourusername/codepackager
+Author: Sameel Shahid
+Author-email: sameelshahid@hotmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
 # CodeToGPT
 
 Welcome to **CodeToGPT**, a powerful tool designed to simplify the process of preparing codebases for interactions with AI models like ChatGPT. By concatenating multiple code files into well-organized documents, this application enhances the ease and efficiency of providing complex code contexts to AI, facilitating more accurate and context-aware responses.
