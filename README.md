@@ -55,6 +55,10 @@ This project is licensed under the MIT License - see the `LICENSE` file for deta
 
 ## Contact
 
-Sameel Shahid - [@sameelshahid](https://sameelshahid.com)
+Sameel Shahid - [@sameelshahid](https://www.linkedin.com/in/sameel-shahid/)
 
 Project Link: [https://github.com/sameelshahid/codetogpt](https://github.com/sameelshahid/codetogpt)
+
+## Contributors
+
+Abdul Jaleel Khan- [@ajk](https://www.linkedin.com/in/abdul-jaleel-khan/)
