@@ -6,30 +6,43 @@ def concatenate_files(source_folder):
     python_output_file = os.path.join(source_folder, "combined_python_code.txt")
     java_output_file = os.path.join(source_folder, "combined_java_code.txt")
 
-    # Initialize files to ensure they are empty before starting
-    open(python_output_file, 'w').close()
-    open(java_output_file, 'w').close()
+    # Collect all contents first to check if they are non-empty
+    python_contents = collect_files_contents(source_folder, ".py")
+    java_contents = collect_files_contents(source_folder, ".java")
 
+    # Write contents to files if non-empty
+    if python_contents:
+        write_contents_to_file(python_contents, python_output_file)
+        print(f"Combined Python file created at: {python_output_file}")
+    else:
+        print("No Python files found or all were empty.")
+
+    if java_contents:
+        write_contents_to_file(java_contents, java_output_file)
+        print(f"Combined Java file created at: {java_output_file}")
+    else:
+        print("No Java files found or all were empty.")
+
+def collect_files_contents(source_folder, file_extension):
+    """Collects and returns the contents of all files with the given extension in the source folder."""
+    contents = []
     for subdir, dirs, files in os.walk(source_folder):
         for file in files:
-            if file.endswith(".py"):
+            if file.endswith(file_extension):
                 file_path = os.path.join(subdir, file)
-                write_contents_to_file(file_path, python_output_file, source_folder)
-            elif file.endswith(".java"):
-                file_path = os.path.join(subdir, file)
-                write_contents_to_file(file_path, java_output_file, source_folder)
+                with open(file_path, 'r') as infile:
+                    file_contents = infile.read()
+                    if file_contents.strip():  # Check if the file is not just whitespace
+                        contents.append((file_path, file_contents))
+    return contents
 
-    print(f"Combined Python file created at: {python_output_file}")
-    print(f"Combined Java file created at: {java_output_file}")
-
-def write_contents_to_file(file_path, output_file, source_folder):
-    """Writes the contents of a file to the specified output file with a header."""
-    relative_path = os.path.relpath(file_path, source_folder)  # Compute the relative path
-    with open(output_file, 'a') as outfile:  # Open in append mode
-        # Write relative path and file name as a comment for reference
-        outfile.write(f"# File: {relative_path}\n")
-        with open(file_path, 'r') as infile:
-            outfile.write(infile.read() + "\n\n")  # Read and write the contents of the file
+def write_contents_to_file(contents, output_file):
+    """Writes the collected contents to the specified output file with a header for each file."""
+    with open(output_file, 'w') as outfile:
+        for file_path, file_contents in contents:
+            relative_path = os.path.relpath(file_path, os.path.dirname(output_file))
+            outfile.write(f"# File: {relative_path}\n")
+            outfile.write(file_contents + "\n\n")
 
 def main():
     parser = argparse.ArgumentParser(description="Separately package Python and Java code into single files.")
