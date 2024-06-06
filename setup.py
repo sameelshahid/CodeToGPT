@@ -9,7 +9,7 @@ with open(os.path.join(here, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name='code-to-gpt',
-    version='0.4',
+    version='0.6',
     packages=find_packages(),
     description='A simple tool to concatenate code files for ChatGPT prompts',
     long_description=long_description,
